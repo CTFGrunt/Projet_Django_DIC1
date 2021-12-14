@@ -1,0 +1,21 @@
+
+<div class="container">
+    <ul class="row">
+        <h3>Eleves du departement GC</h3>
+        {% for eleve in eleves %}
+            <li class="list"> {{eleve.prenom}} {{ eleve.nom}}</li>
+                
+        {% endfor %}
+        
+    </ul>
+</div>
+<div class="container">
+    <ul class="row">
+        <h3>Professeurs du departement GC</h3>
+        {% for prof in profs %}
+        <li class="list"> {{prof.prenom}} {{ prof.nom}}</li>
+
+        {% endfor %}
+
+    </ul>
+</div>

@@ -1,0 +1,84 @@
+{% load static %}
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block title %}<title>Ecole Polytechnique de Thiès</title>{% endblock %}
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/style.css" type="text/css"> -->
+    
+</head>
+<body>
+<div>
+{% block header %} 
+{% include 'home/header.html' %}
+{% endblock %}
+
+    <section>
+        <section>
+            <div style="background-color: #e4872a; height: 35px; border-radius: 5px; color: white;">
+                <h6>Contacts</h6>
+            </div>
+            
+            <div><img src="{{ STATIC_URL }}/static/img/mail_black_24dp1.svg" alt="Image" style="height: 30px;" />Mail: ept@ept.sn Postale: BP A10, Thiès, Sénégal</div>
+            <div><img src="{{ STATIC_URL }}/static/img/call-24px1.svg" alt="Image" style="height: 30px;" />Téléphone : 00221 33 951 15 48</div>
+            <div><img src="{{ STATIC_URL }}/static/img/telephone1.svg" alt="Image" style="height: 30px;" />Fax :  00221 33 951 14 79</div>
+        </section>
+        <section>
+            <div style="background-color: #e4872a; height: 35px; border-radius: 5px; color: white;"> 
+                <h6>Accès</h6>
+            </div>
+
+            <p>
+                L'EPT est située dans la région de Thiès (environ 70Km de Dakar, Sénégal), sur un terrain de plus de 400 hectare.
+                Son campus comporte des locaux d'enseignement pédagogique et de recherche, d'administration, d'exploitation et d'hébergement
+                à l'usage des étudiants et d'une partie du personnel.
+            </p>
+        </section>
+        <section>
+            <div style="background-color: #e4872a; border-radius: 5px; color: white;">
+                <h6>Localisation</h6>
+            </div>
+            <section style="float: left ;">
+                <div>Itinéraire depuis l'aéroport Léopold Sédar Senghor</div>
+                <img src="{% static 'img/itineraire_LSS_EPT.png' %}" alt="Image" style="size: 80%; border: solid black 1px;" />    
+            <br>
+            </section>
+            <section style="float: right ; width: 40%;">
+                <div>Trouver directement l'itinéraire depuis votre adresse jusqu'à l'Ecole Polytechnique de Thiès</div>
+                <form method="POST">
+                    <div class="form-group col align-self-center">
+                        <label for="adresse"><strong>Adresse :</strong></label><br/>
+                        <input type="text" name="adresse" class="form-control" placeholder="Ville/Region">
+                    </div>
+
+                    <div class="form-group col align-self-center">
+                        <label for="BP"><strong>BP :</strong></label><br/>
+                        <input type="text" name="BP" class="form-control" placeholder="Boite Postale">
+                    </div>
+
+                    <div class="form-group col align-self-center">
+                        <input type="submit" class="btn btn-success offset-md-1 col-sm-12 col-md-5" value="Rechercher" style="background-color: #e4872a; color: white; margin-left: 30%; border: white;">
+                    </div>
+                </form>
+            </section>
+            </section>
+        </section>
+
+</div>
+        {% block footer %} 
+        {% include 'home/footer.html' %}
+        {% endblock %}
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+
+        </body>
+
+    

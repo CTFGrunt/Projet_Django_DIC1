@@ -1,0 +1,166 @@
+    <header style="height: 70px; border-bottom: solid black 1px;" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <div class="col-3 img-logo">
+            <li >
+              <a class="nav-link" href="{% url 'index' %}"><img src="{{ STATIC_URL }}/static/img/ept_logo.png" alt="Image" style="height: 60px;" /><span class="sr-only">(current)</span></a>
+            </li>
+          </div>
+          <div class="col-5 "></div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" style="font-size: 15px;">
+                Départements
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item"  href="#">Génie électromécanique</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Génie civil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Génie informatique et télécoms</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Génie aéronautique</a>
+              </div>
+            </li>
+            <li class="nav-item" style="font-size: 15px;">
+                <a class="nav-link" href="#">Administration</a>
+              </li>
+            
+            <li class="nav-item" style="font-size: 15px;">
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+            <li class="nav-item" style="font-size: 15px;">
+              <a class="nav-link" href="#">A_propos</a>
+            </li>
+          </div>
+        </ul>
+        <div class="col-3 ">
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#connexion_modal" style="background-color: #e4872a ;border: solid white 3px;  border-radius: 10px;">Connexion</button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#inscription_modal" style="background-color: white; border: solid #e4872a 3px; color: #e4872a; border-radius: 10px;">Inscription</button>
+          
+          <!--Inscription Modal -->
+          
+          <div class="modal fade" id="inscription_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered " role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle"><strong>Créer un compte utilisateur</strong></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <section>
+                      <div class="form-group">
+                        <label for="prenom-nom"><b>Prénoms et nom :</b></label><br>
+                        <input type="text" class="form-control" id="prenom" placeholder="Prenom">
+                        <input type="text" class="form-control" id="nom" placeholder="Nom">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="mail"><b>Adresse mail</b></label><br>
+                        <input type="email" class="form-control" id="mail" placeholder="etudiant@ept.sn">
+                      </div>
+                      <div class="form-group">
+                        <label for="departement"><b>Départements</b></label><br>
+                        <select name="departement" id="departement">
+                          <option value="TC">Tronc Commun</option>
+                          <option value="GM">Génie électromécanique</option>
+                          <option value="GC">Génie civil</option>
+                          <option value="GIT">Génie informatique et Télécoms</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="classe"><b>Classe - Niveau</b></label><br>
+                        <select name="classe" id="classe">
+                          <option value="TC1">TC1</option>
+                          <option value="TC2">TC2</option>
+                          <option value="DIC1">DIC1</option>
+                          <option value="DIC2">DIC2</option>
+                          <option value="DIC3">DIC3</option>
+                        </select>
+                      </div>
+                    </section>
+                    <section >
+                      <div class="form-group">
+                        <label for="naissance"><b>Date et Lieu de naissance</b></label><br>
+                        <input type="date" name="date" id="date">
+                        <input type="lieudenais" class="form-control" id="lieudenais" placeholder="Lieu de naissance">
+                      </div>
+                      <div class="form-group">
+                        <label for="captcha"><b>Captcha</b></label><br>
+                        <img src="{{ STATIC_URL }}/static/img/captcha.png" alt="Image" style="height: 40px;"/>
+                        <input type="text" class="form-control" id="capchat" placeholder="Entrer le code">
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">*J'ai lu et j'accepte la politique de confidentialité
+                           et les <a href="#">conditions générales d'utilisation</a></label>
+                      </div>
+                    </section>
+                    
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary btn-lg" style="background-color: #e4872a ;border: solid white 3px;  border-radius: 10px;">Valider</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Connexion Modal -->
+          
+          <div class="modal fade" id="connexion_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle"><strong>Se connecter à un compte utilisateur</strong></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="" method="POST">
+                    <div class="form-group col align-self-center">
+                      <label for="mail">Adresse mail :</label><br/>
+                      <input type="email" name="mail" class="form-control" placeholder="etudiant@ept.sn">
+                    </div>
+          
+                    <div class="form-group col align-self-center">
+                      <label for="pwd">Mot de passe :</label><br/>
+                      <input type="text" name="pwd" class="form-control" placeholder="********">
+                    </div>
+          
+                    <div class="form-group col align-self-center">
+                      <input type="submit" class="btn btn-primary btn-lg" value="Valider" style="background-color: #e4872a ;border: solid white 3px;  border-radius: 10px;">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        </ul>
+        </div>
+        <hr>
+        </nav>
+        <style>
+          .form-group input {
+            border: solid #e4872a 2px; 
+            border-radius: 10px;
+          }
+          .form-group select {
+            border: solid #e4872a 1px; 
+            border-radius: 5px;
+          }
+          .form-group label{
+            color: black;
+          }
+        </style>
+      </header>
+      <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
+
